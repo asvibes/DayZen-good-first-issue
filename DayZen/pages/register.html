@@ -11,9 +11,9 @@
 <body>
 
     <div class="container">
-        <h2 class="welcome-message">✨ Get Started Now!</h2>
+        <h2 class="welcome-message">✨DayZen!</h2>
 
-        <form id="registerForm">
+        <form id="registerForm" novalidate>
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
@@ -27,14 +27,13 @@
         </form>
 
         <p class="login-link">
-            Already have an account? <a href="#">Login</a>
+            Already have an account? <a href="login.html">Login</a>
         </p>
+        
     </div>
 
-    <div id="securityMessage">
-        <p>🔒 Your account is secure. Want to enable extra protection?</p>
-        <button id="setup2fa">Set up 2 factor authentication</button>
-        <button id="skipSecurity">No thanks</button>
+    <div id="createaccount">
+        Account created successfully ! you may login now
     </div>
 
     <script src="../js/register-script.js"></script>
