@@ -3,19 +3,23 @@
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #3498db, #9b59b6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
   height: 100vh;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .container {
-  width: 90%;
   max-width: 400px;
-  margin: 20px auto;
+  margin: 10px auto;
+
+  /* This margin 200px is to make the div center along the y axis 
+  due to some reason the div is not getting centered by margin : 10px auto; */
+  margin-top: 200px;
+
   padding: 25px;
   box-sizing: border-box;
 
@@ -97,14 +101,14 @@ button:hover {
 
 /* security popup improve */
 #securityMessage {
-  display: none;  
+  display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
   padding: 15px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 #securityMessage button {
@@ -122,4 +126,10 @@ button:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+#createaccount {
+  margin-left: 590px;
+  margin-top: 20px;
+  color: rgb(70, 227, 70);
+  display: none;
 }
