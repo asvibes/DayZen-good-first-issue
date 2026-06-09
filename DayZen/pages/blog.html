@@ -73,6 +73,8 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
   }
 
   .post {
+   display: flex;
+   flex-direction: column;
    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
    border: 1px solid rgba(255, 255, 255, 0.08);
    border-radius: 26px;
@@ -81,6 +83,18 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
    position: relative;
    overflow: hidden;
    animation: floatUp 1.1s ease both;
+   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+   height: 100%;
+  }
+  
+  .post:hover {
+   transform: translateY(-8px) scale(1.02);
+   box-shadow: 0 28px 72px rgba(126, 255, 211, 0.2);
+   border-color: rgba(126, 255, 211, 0.3);
+  }
+  
+  .post:hover h2 {
+   color: var(--accent);
   }
 
   .post::before {
@@ -93,17 +107,31 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
    background: radial-gradient(circle, rgba(126, 255, 211, 0.22), transparent 70%);
    border-radius: 50%;
    filter: blur(20px);
+   transition: all 0.3s ease;
+  }
+
+  .post:hover::before {
+   width: 240px;
+   height: 240px;
+   opacity: 0.4;
+   filter: blur(30px);
   }
 
   .post h2 {
    font-size: 1.65rem;
    margin-bottom: 14px;
+   transition: transform 0.3s ease, color 0.3s ease;
   }
 
   .post p {
    font-size: 1rem;
    color: rgba(244, 247, 255, 0.78);
    margin-bottom: 18px;
+   transition: color 0.3s ease;
+  }
+
+  .post:hover p {
+   color: rgba(244, 247, 255, 0.95);
   }
 
   .post .tag {
@@ -116,6 +144,12 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
    color: #c8f7ea;
    font-size: 0.95rem;
    font-weight: 600;
+   transition: all 0.3s ease;
+  }
+
+  .post:hover .tag {
+   background: rgba(126, 255, 211, 0.25);
+   box-shadow: 0 4px 12px rgba(126, 255, 211, 0.2);
   }
 
   .post .tag::before {
@@ -127,7 +161,9 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
   }
 
   .post footer {
-   margin-top: 22px;
+   margin-top: auto;
+   padding-top: 22px;
+   border-top: 1px solid rgba(255, 255, 255, 0.08);
    display: flex;
    justify-content: space-between;
    gap: 16px;
@@ -140,6 +176,22 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
    color: var(--accent2);
    text-decoration: none;
    font-weight: 600;
+   position: relative;
+   transition: color 0.3s ease;
+  }
+  
+  .post a::after {
+   content: " →";
+   transition: transform 0.3s ease;
+   display: inline-block;
+  }
+  
+  .post a:hover {
+   color: var(--accent);
+  }
+  
+  .post a:hover::after {
+   transform: translateX(4px);
   }
 
   @keyframes fadeIn {
@@ -156,11 +208,11 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
   @keyframes floatUp {
    from {
     opacity: 0;
-    transform: translateY(20px) scale(0.98);
+    transform: translateY(20px);
    }
    to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
    }
   }
 
@@ -178,25 +230,22 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
    }
   }
   .back-home {
-
-   text-align: center;
-   margin-top: 40px;
-   background-color: #c8f7ea;
-   padding: 10px 12px;
-   border-radius: 60%;
-   text-decoration: none;
    display: inline-block;
-  }
-  .btn-home{
-   font-weight: 600;
+   margin-top: 40px;
    text-decoration: none;
+   padding: 12px 24px;
+   background: linear-gradient(135deg, rgba(126, 255, 211, 0.2), rgba(126, 255, 211, 0.1));
+   border: 1px solid var(--accent);
+   border-radius: 8px;
+   color: var(--accent);
+   font-weight: 600;
+   transition: all 0.3s ease;
   }
-  .back-home :hover {
-   font-weight: 900;
-   font-size:medium;
-   font: bold;
-   color: var(--accent2);
-   transition: font 0.6s ease;
+  
+  .back-home:hover {
+   background: linear-gradient(135deg, rgba(126, 255, 211, 0.3), rgba(126, 255, 211, 0.2));
+   transform: translateX(-4px);
+   box-shadow: 0 8px 16px rgba(126, 255, 211, 0.15);
   }
  </style>
 </head>
@@ -214,7 +263,7 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
     <span class="tag">Design</span>
     <footer>
      <span>April 28, 2026</span>
-     <a href="#">Read more →</a>
+     <a href="#">Read more</a>
     </footer>
    </article>
 
@@ -224,7 +273,7 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
     <span class="tag">Frontend</span>
     <footer>
      <span>April 20, 2026</span>
-     <a href="#">Read more →</a>
+     <a href="#">Read more</a>
     </footer>
    </article>
 
@@ -234,15 +283,11 @@ text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
     <span class="tag">Typography</span>
     <footer>
      <span>April 12, 2026</span>
-     <a href="#">Read more →</a>
-
-     
+     <a href="#">Read more</a>
     </footer>
    </article>
   </section>
-  <div class="back-home">
-          <a href="../index.html" class="btn-home">← Back to Home</a>
-      </div> 
+  <a href="../index.html" class="back-home">← Back to Home</a> 
  </main>
 </body>
 </html>

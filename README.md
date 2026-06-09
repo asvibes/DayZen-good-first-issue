@@ -91,4 +91,6 @@ Contributed by Megha 🚀
 If you need help or face any issues,feel free to:
 - Open an issue in this repository
 - Contact the maintainers
-- Check existing discussions for solution 
+- Check existing discussions for solution
+
+Developed by Berat Gökdemir (brgkdm)
