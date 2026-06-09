@@ -5,366 +5,386 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start New Project - DayZen</title>
     
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    
-    <!-- Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/logos/logo.png" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Intro.js for Tour -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/introjs.min.css" integrity="sha512-LG7l1tbF72DGUqBESsGCnS8DdKqrLT3lmONMnSfkvZGWKIwUznlBPQUHYh0q1OEf67CDzXJ0/kARmPv4vTCVmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Intro JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/introjs.min.css"/>
+
     <link rel="stylesheet" href="../css/brand.css">
 
     <style>
         :root {
-            --zen-green: #2ecc71;
-            --zen-blue: #3498db;
-            --zen-light-green: #e8f5e9;
-            --zen-light-blue: #e3f2fd;
-            --zen-bg: #ffffff;
-            --zen-white: #ffffff;
-            --zen-text: #2c3e50;
-            --zen-muted: #7f8c8d;
-            --nav-height: 80px;
-            --card-shadow: rgba(46, 204, 113, 0.08);
-            --border-color: rgba(52, 152, 219, 0.1);
-            --hero-gradient: linear-gradient(135deg, #f0fff4 0%, #ebf8ff 100%);
-            --cta-gradient: linear-gradient(135deg, #2ecc71 0%, #3498db 100%);
-        }
-
-        [data-theme="dark"] {
-            --zen-bg: #1a1a2e;
-            --zen-white: #16213e;
-            --zen-text: #e9ecef;
-            --zen-muted: #94a3b8;
-            --card-shadow: rgba(0, 0, 0, 0.4);
-            --border-color: rgba(255, 255, 255, 0.05);
-            --hero-gradient: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
-            --zen-light-green: #1b4d3e;
-            --zen-light-blue: #1e3a5f;
+            --mint-light: #f2faf9;
+            --mint-accent: #a8dadc;
+            --blue-light: #f0f9ff;
+            --blue-accent: #90e0ef;
+            --text-dark: #2d3436;
+            --text-muted: #636e72;
+            --pure-white: #ffffff;
+            --soft-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--zen-bg);
-            color: var(--zen-text);
-            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: #a8dadc;
+            line-height: 1.7;
+            overflow-x: hidden;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: var(--transition-smooth);
         }
 
         h1, h2, h3 {
-            font-family: 'Libertinus Sans', sans-serif;
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
 
         /* Navbar */
         .navbar {
-            background-color: var(--zen-white) !important;
-            min-height: var(--nav-height);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.02);
-            z-index: 1030;
-            transition: background-color 0.3s ease;
+            background-color:#a8dadc;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            transition: var(--transition-smooth);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo-container img {
-            width: 40px;
-            margin-right: 10px;
-        }
-
-        .logo-container h1 {
+        .navbar-brand h1 {
             font-size: 1.5rem;
-            color: var(--zen-text);
-            margin: 0;
+            color: var(--text-dark);
+            letter-spacing: 1px;
         }
 
-        .logo-container .brand-slogan {
-            color: var(--zen-text);
+        .navbar-brand .brand-slogan {
+            color: var(--text-dark);
         }
 
         .nav-link {
-            color: var(--zen-text) !important;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--mint-light) !important;
+            margin: 0 14px;
+            transition: var(--transition-smooth);
             display: flex;
             align-items: center;
-            padding: 8px 12px !important;
-            margin: 0 5px;
+            gap: 6px;
+            letter-spacing: 0.3px;
         }
 
         .nav-link:hover {
-            color: var(--zen-green) !important;
+            opacity: 1;
+            transform: translateY(-0.8px);
         }
 
         .nav-img {
-            height: 18px;
-            margin-right: 6px;
+            width: 16px;
+            margin-right: 8px;
+            filter: grayscale(100%) opacity(0.7);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover .nav-img {
+            filter: grayscale(0%) opacity(1);
+        }
+
+        .btn-primary {
+            background-color: var(--mint-accent);
+            border: none;
+            color: var(--text-dark);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            box-shadow: var(--soft-shadow);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--blue-accent);
+            color: var(--text-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Dark Mode compatibility */
+        body.dark-mode {
+            background-color: #121212 !important;
+            color: #e0e0e0;
+        }
+        body.dark-mode .navbar {
+            background-color: #1f1f1f !important;
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+        }
+        body.dark-mode .navbar-brand h1,
+        body.dark-mode .hero h2 {
+            color: #e0e0e0;
+        }
+        body.dark-mode .navbar-brand .brand-slogan,
+        body.dark-mode .hero p {
+            color: #aeb8be;
+        }
+        body.dark-mode .nav-link {
+            color: #e0e0e0 !important;
         }
 
         /* Hero Section */
         .hero {
+            padding: 180px 0 80px;
+            background: linear-gradient(135deg, var(--pure-white) 0%, var(--mint-light) 100%);
+            position: relative;
             text-align: center;
-            padding: 160px 0 120px;
-            background: var(--hero-gradient);
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #1c1c1c 0%, #242424 100%);
         }
 
         .hero h2 {
-            font-size: 2.8rem;
-            color: var(--zen-text);
-            margin-bottom: 10px;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
         .hero p {
             font-size: 1.1rem;
-            color: var(--zen-muted);
+            color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Form Card */
+        /* Project Form Card - Inspired by index.html contact card */
+        .project-container {
+            flex: 1;
+            padding: 60px 0;
+            background: linear-gradient(180deg, #A8DADC, #208cb4);
+        }
+
         .project-form-card {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 60px 40px;
+            border-radius: 30px;
+            color: #e2e8f0;
             max-width: 800px;
-            margin: -50px auto 60px;
-            background: var(--zen-white);
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 15px 45px var(--card-shadow);
-            border: 1px solid var(--border-color);
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
             position: relative;
-            z-index: 10;
-            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .project-form-card::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 30%, rgba(56,189,248,0.15), transparent 40%);
+            animation: floatBg 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatBg {
+            0% { transform: translate(0,0); }
+            50% { transform: translate(-4%, -6%); }
+            100% { transform: translate(0,0); }
         }
 
         .form-label {
-            font-weight: 600;
-            color: var(--zen-text);
-            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            display: block;
         }
 
         .form-control {
-            border-radius: 12px;
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-            background-color: var(--zen-white);
-            color: var(--zen-text);
-            transition: all 0.3s ease;
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            outline: none;
+            transition: 0.3s ease;
         }
 
         .form-control:focus {
-            border-color: var(--zen-green);
-            background-color: var(--zen-white);
-            color: var(--zen-text);
-            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
-        }
-
-        .form-control::placeholder {
-            color: var(--zen-muted);
-            opacity: 0.7;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56,189,248,0.25);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
         }
 
         /* Type Selection Grid */
-        .project-types-grid {
+        .project-types {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 15px;
+            gap: 20px;
+            margin: 20px 0;
         }
 
-        .type-card {
-            background: var(--zen-white);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+        .project-type-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
             padding: 25px 15px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
+            position: relative;
         }
 
-        .type-card:hover {
-            border-color: var(--zen-blue);
-            transform: translateY(-5px);
-            background: var(--zen-white);
+        .project-type-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.1);
+            border-color: #38bdf8;
         }
 
-        .type-card.selected {
-            background: var(--zen-light-green);
-            border-color: var(--zen-green);
-            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.1);
+        .project-type-card.selected {
+            background: rgba(56, 189, 248, 0.2);
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
         }
 
-        .type-card img {
-            width: 60px;
-            height: 60px;
+        .project-type-card img {
+            width: 50px;
             margin-bottom: 15px;
+            transition: transform 0.4s ease;
         }
 
-        .type-card h3 {
+        .project-type-card:hover img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .project-type-card h3 {
             font-size: 1.2rem;
+            color: #fff;
             margin-bottom: 5px;
-            color: var(--zen-text);
         }
 
-        .type-card p {
+        .project-type-card p {
             font-size: 0.85rem;
-            color: var(--zen-muted);
+            color: #94a3b8;
             margin: 0;
         }
 
         /* Buttons */
-        .cta-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 40px;
-            justify-content: center;
-        }
-
-        .btn-zen {
-            padding: 12px 30px;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .btn-send {
+            margin-top: 20px;
+            padding: 14px 40px;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(90deg, #38bdf8, #a78bfa);
+            color: white;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            min-width: 180px;
+            display: inline-block;
         }
 
-        .btn-zen-primary {
-            background: var(--cta-gradient);
-            color: white;
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
-        }
-
-        .btn-zen-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+        .btn-send:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(56,189,248,0.4);
             color: white;
         }
 
-        .btn-zen-secondary {
-            background: var(--zen-white);
-            color: var(--zen-text);
-            border: 1px solid var(--border-color);
+        .btn-cancel {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #94a3b8;
+            margin-left: 15px;
         }
 
-        .btn-zen-secondary:hover {
-            background: var(--zen-light-blue);
-            color: var(--zen-text);
-        }
-
-        .btn-tour {
-            background: #1a5276; /* Much darker blue for high contrast */
-            color: #ffffff !important;
-            border: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .btn-tour:hover {
-            background: #154360;
-            transform: scale(1.05);
-            color: #ffffff !important;
-        }
-
-        /* Theme Toggle */
-        #theme-toggle {
-            background: none;
-            border: none;
-            padding: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-            margin-right: 10px;
-        }
-
-        #theme-toggle:hover {
-            background-color: var(--border-color);
-        }
-
-        #theme-toggle svg {
-            width: 22px;
-            height: 22px;
-            fill: var(--zen-text);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        .btn-cancel:hover {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
         }
 
         /* Footer */
         .footer {
-            background-color: var(--zen-white);
-            border-top: 1px solid var(--border-color);
-            padding: 40px 0;
+            background: linear-gradient(180deg, #A8DADC, #208cb4);
+            color: #e2e8f0;
+            padding: 60px 0 40px;
             text-align: center;
-            margin-top: auto;
-            transition: all 0.3s ease;
+        }
+
+        .footer-logo img {
+            width: 42px;
+            opacity: 0.8;
+            margin-bottom: 20px;
         }
 
         .footer p {
-            margin-bottom: 10px;
-            color: var(--zen-muted);
+            font-size: 0.95rem;
+            font-weight: bolder;
+            color: #e8eaed;
+            margin-bottom: 15px;
         }
 
-        .footer a {
-            color: var(--zen-blue);
+        .footer-links a {
+            color: #e6e6ea;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
+            font-weight: bolder;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: -4px;
+            background: linear-gradient(90deg, #1900f8, #4f30ad);
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
         }
 
         @media (max-width: 768px) {
-            .hero h2 { font-size: 2rem; }
-            .project-form-card { margin: -30px 15px 40px; padding: 25px; }
-            .project-types-grid { grid-template-columns: 1fr; }
-            .cta-group { flex-direction: column; }
-        }
-
-        /* Intro.js Customization */
-        .introjs-tooltip {
-            border-radius: 16px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .introjs-nextbutton {
-            background: var(--zen-green) !important;
-            color: white !important;
-            border: none !important;
-            text-shadow: none !important;
+            .hero h2 { font-size: 2.2rem; }
+            .project-types { grid-template-columns: 1fr; }
+            .project-form-card { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a href="../index.html" class="logo-container" aria-label="DayZen">
-                <img src="../assets/images/logos/logo.png" alt="DayZen Logo">
-                <div class="brand-copy">
-                    <h1>DayZen</h1>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container align-items-center">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="../index.html" aria-label="DayZen">
+                <img src="../assets/images/logos/logoWhite.png" alt="DayZen Logo" width="32" style="filter: invert(1);">
+                <div class="ms-3 brand-copy">
+                    <h1 class="mb-0">DayZen</h1>
                     <small class="brand-slogan" aria-hidden="true">Set Your Time, Manage Your Day!</small>
                 </div>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_items">
+            <!-- Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav_items">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Nav Items -->
             <div class="collapse navbar-collapse" id="nav_items">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
@@ -378,29 +398,29 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="blog.html">
                             <img src="../assets/images/Illustrations/blog.png" class="nav-img" /> Blog
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="help.html">
-                            <img src="../assets/images/Illustrations/communication.png" class="nav-img" /> Help
+                        <a class="nav-link" href="../index.html#contact">
+                            <img src="../assets/images/Illustrations/communication.png" class="nav-img" /> Contact
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Profile.html">
-                            <img src="../assets/images/icons/userColor.png" class="nav-img" /> Profile
+                        <a class="nav-link" href="register.html">
+                            <img src="../assets/images/icons/userColor.png" class="nav-img" /> Login
                         </a>
                     </li>
-                    <li class="nav-item ms-lg-2 d-flex align-items-center">
-                        <button id="theme-toggle" title="Toggle Night Mode">
-                            <svg viewBox="0 0 24 24">
-                                <path id="theme-icon-path" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
-                            </svg>
-                        </button>
-                        <button class="btn btn-tour btn-sm rounded-pill px-4 tour-button">Take Tour</button>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button class="btn btn-primary">Take Tour</button>
                     </li>
                 </ul>
+            </div>
+
+            <!-- Theme Icon -->
+            <div class="ms-4 d-none d-lg-block">
+                <img id="theme-icon" src="../assets/images/icons/sun.png" alt="Toggle theme" width="20" style="cursor: pointer; opacity: 0.5;">
             </div>
         </div>
     </nav>
@@ -413,90 +433,68 @@
     </div>
 </section>
 
-<main class="container">
-    <div class="project-form-card">
-        <form id="projectForm">
-            <div class="mb-4">
-                <label for="project-name" class="form-label">What's the name of your project?</label>
-                <input type="text" class="form-control" id="project-name" placeholder="e.g., Daily Meditation" required>
-            </div>
+<main class="project-container">
+    <div class="container">
+        <div class="project-form-card">
+            <form id="projectForm">
+                <div class="mb-4">
+                    <label for="project-name" class="form-label">What's the name of your project?</label>
+                    <input type="text" class="form-control" id="project-name" placeholder="e.g., Daily Meditation" required>
+                </div>
 
-            <div class="mb-4">
-                <label for="project-description" class="form-label">Briefly describe your goal</label>
-                <textarea class="form-control" id="project-description" rows="2" placeholder="My goal is to..."></textarea>
-            </div>
+                <div class="mb-4">
+                    <label for="project-description" class="form-label">Briefly describe your goal</label>
+                    <textarea class="form-control" id="project-description" rows="3" placeholder="My goal is to..."></textarea>
+                </div>
 
-            <div class="form-group" id="Project-Type">
-                <label>Project Type</label>
-                <div class="project-types">
-                    <div class="project-type-card">
-                        <img src="../assets/images/Illustrations/productivity.png" alt="Fitness">
-                        <h3>Fitness</h3>
-                        <p>Health & Vitality.</p>
-                    </div>
-                    <div class="project-type-card">
-                        <img src="../assets/images/Illustrations/planning.png" alt="Study">
-                        <h3>Study</h3>
-                        <p>Growth & Focus.</p>
-                    </div>
-                    <div class="project-type-card">
-                        <img src="../assets/images/Illustrations/reward.png" alt="Work">
-                        <h3>Work</h3>
-                        <p>Impact & Flow.</p>
+                <div class="form-group mb-4">
+                    <label class="form-label">Project Type</label>
+                    <div class="project-types">
+                        <div class="project-type-card" data-type="Fitness">
+                            <img src="../assets/images/Illustrations/productivity.png" alt="Fitness">
+                            <h3>Fitness</h3>
+                            <p>Health & Vitality.</p>
+                        </div>
+                        <div class="project-type-card" data-type="Study">
+                            <img src="../assets/images/Illustrations/planning.png" alt="Study">
+                            <h3>Study</h3>
+                            <p>Growth & Focus.</p>
+                        </div>
+                        <div class="project-type-card" data-type="Work">
+                            <img src="../assets/images/Illustrations/reward.png" alt="Work">
+                            <h3>Work</h3>
+                            <p>Impact & Flow.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="cta-group">
-                <button type="submit" class="btn-zen btn-zen-primary cta-button primary-cta">Create Project</button>
-                <a href="indexacc.html" class="btn-zen btn-zen-secondary">Cancel</a>
-            </div>
-        </form>
+                <div class="text-center mt-5">
+                    <button type="submit" class="btn-send">Create Project</button>
+                    <a href="../index.html" class="btn-send btn-cancel">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 </main>
 
 <footer class="footer">
     <div class="container">
-        <p>© 2024 DayZen. Your companion for a balanced life.</p>
-        <div>
+        <div class="footer-logo">
+            <img src="../assets/images/logos/logoWhite.png" alt="DayZen">
+        </div>
+        <p>© 2024 DayZen. All rights reserved.</p>
+        <div class="footer-links">
             <a href="privacy.html">Privacy Policy</a>
-            <span class="text-muted">|</span>
             <a href="terms.html">Terms of Service</a>
         </div>
     </div>
 </footer>
 
+<script src="../js/theme-toggle.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIconPath = document.getElementById('theme-icon-path');
-    const body = document.documentElement;
-
-    const moonPath = "M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z";
-    const sunPath = "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zM7.05 18.36c.39-.39.39-1.03 0-1.41l-1.06-1.06c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0z";
-
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'dark') {
-        body.setAttribute('data-theme', 'dark');
-        themeIconPath.setAttribute('d', sunPath);
-    }
-
-    themeToggle.addEventListener('click', () => {
-        const isDark = body.getAttribute('data-theme') === 'dark';
-        if (isDark) {
-            body.removeAttribute('data-theme');
-            themeIconPath.setAttribute('d', moonPath);
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.setAttribute('data-theme', 'dark');
-            themeIconPath.setAttribute('d', sunPath);
-            localStorage.setItem('theme', 'dark');
-        }
-    });
-
     // Routine selection
-    const cards = document.querySelectorAll('.type-card');
+    const cards = document.querySelectorAll('.project-type-card');
     let selectedType = null;
     
     cards.forEach(card => {
@@ -512,12 +510,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const name = document.getElementById('project-name').value;
         
         if(!selectedType) {
-            alert('Please select a routine type to continue.');
+            alert('Please select a project type to continue.');
             return;
         }
         
         alert(`Success! Your "${name}" ${selectedType} project has been created.`);
-        window.location.href = 'indexacc.html';
+        window.location.href = '../index.html';
     });
 });
 </script>
@@ -526,10 +524,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Intro.js JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js" integrity="sha512-5ykRz1AkSpATwLO5fFqJb7Y5kprfzu/q9PbRVSOspLcn2Tm7m6vZIAyoUA4a5GFNRIlxM43kHXmYEphfz3eOWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- Onboarding Script -->
-<script src="../js/onboarding-project.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js"></script>
 
 </body>
 </html>
